@@ -4,6 +4,8 @@
 
 //Any global variable go here
 var player1_turn=true;
+var player1_piece='images/betafish.png';
+var player2_piece='images/puffer.png';
 
 //Main board object
 var game__board={
@@ -21,13 +23,13 @@ var game__board={
 //Board rendering function
 function insert_player_piece(square){
   if(player1_turn==true){
-      var player1_piece=$('<img>').attr('src',player1imgsrc);
-      $(square).prepend(player1_piece);
+      var player1_icon=$('<img>').attr('src',player1_piece);
+      $(square).prepend(player1_icon);
 
   }
     else{
-      var player2_piece=$('<img>').attr('src',player2imgsrc);
-      $(square).prepend(player2_piece);
+      var player2_icon=$('<img>').attr('src',player2_piece);
+      $(square).prepend(player2_icon);
 
   }
 };
@@ -55,10 +57,11 @@ function update_board(square){
 
 //Document Ready - should include basic click handler
 $(document).ready(function () {
-    $('.gameBoard').on('click','.gameSquare',function(){
+    $('.gameboard_wrapper').on('click','.game_board',function(){
         var current_square=this;
-        insert_player_piece(this);
-        update_board(this);
+        insert_player_piece(current_square);
+        update_board(current_square);
+        console.log(game__board);
 
     })
 
