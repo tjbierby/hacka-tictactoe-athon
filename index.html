@@ -13,31 +13,27 @@
 
 <body>
     <div class="container-fluid" id="main">
-       <div class="row">
-        <div class="navbar " id="navbar">
-            <h1 class="jumbortron">Tic-Tac-Toe</h1>
-            <div class="collapse navbar-collapse">
-                <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="#">About</a></li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <div class="row">
+            <div class="navbar " id="navbar">
+                <h1>Tic-Tac-Toe</h1>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="active"><a href="#">About</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             Options <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                Easy
-                            </li>
-                            <li>
-                                Hard
-                            </li>
-                        </ul>
-                    </li>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" id="easy">Easy</a></li>
+                                <li><a href="#" id="difficult">Difficult</a></li>
+                            </ul>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
-        </div>
-         <div class="gameboard_wrapper">
+        <div class="gameboard_wrapper">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-xs-4 col-md-2 game_board" id="s0">x</div>
@@ -60,8 +56,56 @@
                 <div class="col-md-3"></div>
             </div>
         </div>
+        <div class="lg_gameboard_wrapper hide">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-xs-3 col-md-2 game_board" id="z0">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z1">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z2">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z3">x</div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-xs-3 col-md-2 game_board" id="z4">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z5">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z6">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z7">x</div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-xs-3 col-md-2 game_board" id="z8">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z9">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z10">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="z11">x</div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-xs-3 col-md-2 game_board" id="s0">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="s1">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="s2">x</div>
+                <div class="col-xs-3 col-md-2 game_board" id="s2">x</div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
 
     </div>
+    <script>
+        $(function () {
+            $("#easy").click(function(){
+                $(".gameboard_wrapper").removeClass('hide');
+                $(".lg_gameboard_wrapper").addClass('hide');
+            });
+            $("#difficult").click(function() {
+                $(".lg_gameboard_wrapper").removeClass('hide');
+                $(".gameboard_wrapper").addClass('hide');
+            });
+
+
+        })
+    </script>
 </body>
 
 </html>
