@@ -25,15 +25,16 @@ function insert_player_piece(square){
         if(player1_turn==true){
             var player1_icon=$('<img>').attr('src',player1_piece);
             $(square).prepend(player1_icon);
-
+            $(square).addClass('clicked x');
 
         }
         else{
             var player2_icon=$('<img>').attr('src',player2_piece);
             $(square).prepend(player2_icon);
+            $(square).addClass('clicked o');
 
         }
-        $(square).addClass('clicked');
+
 
 
 };
@@ -63,6 +64,10 @@ function check_for_win(){
 
 
 //Reset function
+function reset_game_board(){
+    $('.game_board').html('').removeClass('clicked');
+    player1_turn=true;
+}
 
 //Document Ready - should include basic click handler
 $(document).ready(function () {
