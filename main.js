@@ -43,14 +43,14 @@ function insert_player_piece(square){
 function update_board2(square){
     for(i in game_board){
         if($(square).hasClass(i)){
-            if(player1_turn=true){
+            if(player1_turn){
                 game_board[i]['p1']+=1;
-                player1_turn=false;
+
             }
             else{
                 i['p2']+=1;
                 game_board[i]['p2']+=1;
-                player1_turn=true;
+
             }
         }
     }
@@ -60,10 +60,12 @@ function check_for_win(){
     for(i in game_board){
         if(game_board[i]['p1']==3){
             alert('player 1 wins');
+            reset_game_board();
             return
         }
-        else if(game_board[i]['p1']==3){
+        else if(game_board[i]['p2']==3){
             alert('Player 2 wins!');
+            reset_game_board();
             return
         }
         else{
@@ -79,6 +81,17 @@ function check_for_win(){
 function reset_game_board(){
     $('.game_board').html('').removeClass('clicked');
     player1_turn=true;
+    game_board={
+        column1:{p1:0,p2:0},
+        column2:{p1:0,p2:0},
+        column3:{p1:0,p2:0},
+        row1:{p1:0,p2:0},
+        row2:{p1:0,p2:0},
+        row3:{p1:0,p2:0},
+        diagon1:{p1:0,p2:0},
+        diagon2:{p1:0,p2:0},
+    };
+
 }
 
 //Document Ready - should include basic click handler
@@ -92,6 +105,13 @@ $(document).ready(function () {
             update_board2(current_square);
             check_for_win();
             console.log(game_board);
+            console.log(player1_turn);
+            if(player1_turn){
+                player1_turn=false;
+            }
+            else{
+                player1_turn=true;
+            }
         }
 
 
