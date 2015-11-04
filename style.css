@@ -1,5 +1,6 @@
 #navbar {
     border: 1px solid blue;
+    background-color: rgba(187,246,244,0.5);
 }
 
 .game_board {
@@ -8,3 +9,4 @@
     font-size: 3em;
     text-align: center;
 }
+
