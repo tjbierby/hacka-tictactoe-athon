@@ -17,8 +17,19 @@ var game_board={
     s5:undefined,
     s6:undefined,
     s7:undefined,
-    s8:undefined
+    s8:undefined,
+
 };
+var condition_counter={
+      column1:{p1:undefined,p2:undefined},
+      column2:{p1:undefined,p2:undefined},
+      column3:{p1:undefined,p2:undefined},
+      row1:{p1:undefined,p2:undefined},
+      row2:{p1:undefined,p2:undefined},
+      row3:{p1:undefined,p2:undefined},
+      diagon1:{p1:undefined,p2:undefined},
+      diagon2:{p1:undefined,p2:undefined},
+    };
 
 //Board rendering function
 function insert_player_piece(square){
@@ -57,7 +68,8 @@ function update_board(square){
 
 }
 //Win condition function
-function check_for_win(){
+function check_for_win(obj){
+
 
 }
 
