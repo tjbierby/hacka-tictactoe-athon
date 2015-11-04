@@ -81,6 +81,16 @@ $(document).ready(function () {
         }
 
 
-    })
+    });
+
+    //Difficulty Board Switch
+    $("#easy").click(function(){
+        $(".gameboard_wrapper").removeClass('hide');
+        $(".lg_gameboard_wrapper").addClass('hide');
+    });
+    $("#difficult").click(function() {
+        $(".lg_gameboard_wrapper").removeClass('hide');
+        $(".gameboard_wrapper").addClass('hide');
+    });
 
 });
