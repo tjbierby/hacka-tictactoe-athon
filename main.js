@@ -8,27 +8,16 @@ var player1_piece='images/betafish.png';
 var player2_piece='images/puffer.png';
 
 //Main board object
-var game_board={
-    s0:undefined,
-    s1:undefined,
-    s2:undefined,
-    s3:undefined,
-    s4:undefined,
-    s5:undefined,
-    s6:undefined,
-    s7:undefined,
-    s8:undefined,
 
-};
-var condition_counter={
-      column1:{p1:undefined,p2:undefined},
-      column2:{p1:undefined,p2:undefined},
-      column3:{p1:undefined,p2:undefined},
-      row1:{p1:undefined,p2:undefined},
-      row2:{p1:undefined,p2:undefined},
-      row3:{p1:undefined,p2:undefined},
-      diagon1:{p1:undefined,p2:undefined},
-      diagon2:{p1:undefined,p2:undefined},
+var game_board={
+      column1:{p1:0,p2:0},
+      column2:{p1:0,p2:0},
+      column3:{p1:0,p2:0},
+      row1:{p1:0,p2:0},
+      row2:{p1:0,p2:0},
+      row3:{p1:0,p2:0},
+      diagon1:{p1:0,p2:0},
+      diagon2:{p1:0,p2:0},
     };
 
 //Board rendering function
@@ -50,25 +39,37 @@ function insert_player_piece(square){
 
 };
 //Player tracking function
-function update_board(square){
+
+function update_board2(square){
     for(i in game_board){
-        if(square.id==i){
-            if (player1_turn==true){
-                game_board[i]='x';
+        if($(square).hasClass(i)){
+            if(player1_turn=true){
+                game_board[i]['p1']+=1;
                 player1_turn=false;
             }
             else{
-                game_board[i]='o';
+                i['p2']+=1;
+                game_board[i]['p2']+=1;
                 player1_turn=true;
             }
-
         }
     }
-
-
 }
 //Win condition function
-function check_for_win(obj){
+function check_for_win(){
+    for(i in game_board){
+        if(game_board[i]['p1']==3){
+            alert('player 1 wins');
+            return
+        }
+        else if(game_board[i]['p1']==3){
+            alert('Player 2 wins!');
+            return
+        }
+        else{
+            return
+        }
+    }
 
 
 }
@@ -88,7 +89,8 @@ $(document).ready(function () {
             return}
         else{
             insert_player_piece(current_square);
-            update_board(current_square);
+            update_board2(current_square);
+            check_for_win();
             console.log(game_board);
         }
 
