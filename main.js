@@ -63,6 +63,10 @@ function check_for_win(){
 
 
 //Reset function
+function reset_game_board(){
+    $('.game_board').html('').removeClass('clicked');
+    player1_turn=true;
+}
 
 //Document Ready - should include basic click handler
 $(document).ready(function () {
