@@ -26,3 +26,7 @@ img {
     height: auto;
     width: 90%;
 }
+
+.hide {
+    display: none;
+}
