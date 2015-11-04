@@ -22,16 +22,20 @@ var game__board={
 
 //Board rendering function
 function insert_player_piece(square){
-  if(player1_turn==true){
-      var player1_icon=$('<img>').attr('src',player1_piece);
-      $(square).prepend(player1_icon);
+        if(player1_turn==true){
+            var player1_icon=$('<img>').attr('src',player1_piece);
+            $(square).prepend(player1_icon);
 
-  }
-    else{
-      var player2_icon=$('<img>').attr('src',player2_piece);
-      $(square).prepend(player2_icon);
 
-  }
+        }
+        else{
+            var player2_icon=$('<img>').attr('src',player2_piece);
+            $(square).prepend(player2_icon);
+
+        }
+        $(square).addClass('clicked');
+
+
 };
 //Player tracking function
 function update_board(square){
@@ -59,9 +63,14 @@ function update_board(square){
 $(document).ready(function () {
     $('.gameboard_wrapper').on('click','.game_board',function(){
         var current_square=this;
-        insert_player_piece(current_square);
-        update_board(current_square);
-        console.log(game__board);
+        if($(this).hasClass("clicked")){
+            return}
+        else{
+            insert_player_piece(current_square);
+            update_board(current_square);
+            console.log(game__board);
+        }
+
 
     })
 
