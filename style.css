@@ -1,0 +1,10 @@
+#navbar {
+    border: 1px solid blue;
+}
+
+.game_board {
+    border: 1px solid green;
+    height: 20vh;
+    font-size: 3em;
+    text-align: center;
+}
