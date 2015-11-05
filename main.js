@@ -8,17 +8,17 @@ var player1_piece='images/betafish.png';
 var player2_piece='images/puffer.png';
 
 //Main board object
+
 var game_board={
-    s0:undefined,
-    s1:undefined,
-    s2:undefined,
-    s3:undefined,
-    s4:undefined,
-    s5:undefined,
-    s6:undefined,
-    s7:undefined,
-    s8:undefined
-};
+      column1:{p1:0,p2:0},
+      column2:{p1:0,p2:0},
+      column3:{p1:0,p2:0},
+      row1:{p1:0,p2:0},
+      row2:{p1:0,p2:0},
+      row3:{p1:0,p2:0},
+      diagon1:{p1:0,p2:0},
+      diagon2:{p1:0,p2:0},
+    };
 
 //Board rendering function
 function insert_player_piece(square){
@@ -39,30 +39,50 @@ function insert_player_piece(square){
 
 };
 //Player tracking function
-function update_board(square){
+
+function update_board2(square){
     for(i in game_board){
-        if(square.id==i){
-            if (player1_turn==true){
-                game_board[i]='x';
-                player1_turn=false;
+        if($(square).hasClass(i)){
+            if(player1_turn){
+                game_board[i]['p1']+=1;
+
             }
             else{
-                game_board[i]='o';
-                player1_turn=true;
-            }
+                i['p2']+=1;
+                game_board[i]['p2']+=1;
 
+            }
         }
     }
-
-
 }
 //Win condition function
 /*var game_board_array = [];
 var win_condition_array = [
     [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
-];
+];*/
+
+//var game_board_array = [];
+//var win_condition_array = [
+//    [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
+//];
 
 function check_for_win(){
+    for(i in game_board){
+        if(game_board[i]['p1']==3){
+            alert('player 1 wins');
+            reset_game_board();
+            return
+        }
+        else if(game_board[i]['p2']==3){
+            alert('Player 2 wins!');
+            reset_game_board();
+            return
+        }
+        else{
+            return
+        }
+    }
+
 
 for(var i=0;i<=win_condition_array.length;i++){
     var x_counter=null;
@@ -86,12 +106,23 @@ for(var i=0;i<=win_condition_array.length;i++){
         }
     }
 }
-}*/
+}
 
 //Reset function
 function reset_game_board(){
     $('.game_board').html('').removeClass('clicked');
     player1_turn=true;
+    game_board={
+        column1:{p1:0,p2:0},
+        column2:{p1:0,p2:0},
+        column3:{p1:0,p2:0},
+        row1:{p1:0,p2:0},
+        row2:{p1:0,p2:0},
+        row3:{p1:0,p2:0},
+        diagon1:{p1:0,p2:0},
+        diagon2:{p1:0,p2:0},
+    };
+
 }
 
 //Document Ready - should include basic click handler
@@ -102,8 +133,16 @@ $(document).ready(function () {
             return}
         else{
             insert_player_piece(current_square);
-            update_board(current_square);
+            update_board2(current_square);
+            check_for_win();
             console.log(game_board);
+            console.log(player1_turn);
+            if(player1_turn){
+                player1_turn=false;
+            }
+            else{
+                player1_turn=true;
+            }
         }
 
     });
