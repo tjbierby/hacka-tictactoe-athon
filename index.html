@@ -11,13 +11,14 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </head>
+
 <body>
 
 <div class="container-fluid" id="main">
+
     <div class="row">
         <div class="navbar " id="navbar">
             <h1>Tic-Tac-Undertow</h1>
-
             <div class="collapse navbar-collapse">
                 <ul class="nav nav-pills">
                     <li role="presentation" class="active"><a href="about.html" target="_blank">About</a></li>
@@ -33,12 +34,12 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 
 
     <div class="gameboard_wrapper">
+
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-xs-4 col-md-2 game_board column1 row1 diagonal1 topLeft" id="s0"></div>
@@ -46,6 +47,7 @@
             <div class="col-xs-4 col-md-2 game_board column3 row1 diagonal2 topRight" id="s2"></div>
             <div class="col-md-3"><button onclick='reset_game_board()'>Reset</button></div>
         </div>
+
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-xs-4 col-md-2 game_board column1 row2 middleLeft" id="s3"></div>
@@ -53,6 +55,7 @@
             <div class="col-xs-4 col-md-2 game_board column3 row2 middleRight" id="s5"></div>
             <div class="col-md-3"></div>
         </div>
+
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-xs-4 col-md-2 game_board column1 row3 diagonal2 bottomLeft" id="s6"></div>
@@ -60,17 +63,20 @@
             <div class="col-xs-4 col-md-2 game_board column3 row3 diagonal1 bottomRight" id="s8"></div>
             <div class="col-md-3"></div>
         </div>
+
     </div>
 
 <div class="lg_gameboard_wrapper hide">
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-xs-3 col-md-2 game_board column1 row1 diagonal1 topLeft" id="z0"></div>
         <div class="col-xs-3 col-md-2 game_board column2 row1 topMiddle" id="z1"></div>
         <div class="col-xs-3 col-md-2 game_board column3 row1 topMiddle" id="z2"></div>
         <div class="col-xs-3 col-md-2 game_board column4 row1 diagonal2 topRight" id="z3"></div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2"><button onclick='reset_game_board()'>Reset</button></div>
     </div>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-xs-3 col-md-2 game_board column1 row2 middleLeft" id="z4"></div>
@@ -79,6 +85,7 @@
         <div class="col-xs-3 col-md-2 game_board column4 row2 middleRight" id="z7"></div>
         <div class="col-md-2"></div>
     </div>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-xs-3 col-md-2 game_board column1 row3 middleLeft" id="z8"></div>
@@ -87,6 +94,7 @@
         <div class="col-xs-3 col-md-2 game_board column4 row3 middleRight" id="z11"></div>
         <div class="col-md-2"></div>
     </div>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-xs-3 col-md-2 game_board column1 row4 diagonal2 bottomLeft" id="z12"></div>
@@ -95,6 +103,7 @@
         <div class="col-xs-3 col-md-2 game_board column4 row4 diagonal1 bottomRight" id="z15"></div>
         <div class="col-md-2"></div>
     </div>
+
 </div>
 
 </body>
