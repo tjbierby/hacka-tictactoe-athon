@@ -16,8 +16,8 @@ var game_board={
       row1:{p1:0,p2:0},
       row2:{p1:0,p2:0},
       row3:{p1:0,p2:0},
-      diagon1:{p1:0,p2:0},
-      diagon2:{p1:0,p2:0},
+      diagonal1:{p1:0,p2:0},
+      diagonal2:{p1:0,p2:0},
     };
 
 //Board rendering function
@@ -65,48 +65,46 @@ var win_condition_array = [
 //var win_condition_array = [
 //    [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
 //];
+//for(var i=0;i<=win_condition_array.length;i++){
+//    var x_counter=null;
+//    var o_counter=null;
+//    for(var j=0; j<win_condition_array[i].length;i++){
+//        var condition = win_condition_array[i][j];
+//        if (game_board[condition] == 'x'){
+//            x_counter+=1;
+//            if (x_counter==3){
+//                console.log('x wins')
+//            }
+//        }
+//        else if (j=='o'){
+//            o_counter+=1;
+//            if (o_counter==3){
+//                console.log('o wins')
+//            }
+//        }
+//        else {
+//
+//        }
+//    }
+//}
 
-function check_for_win(){
-    for(i in game_board){
-        if(game_board[i]['p1']==3){
+function check_for_win() {
+    for (i in game_board) {
+        if (game_board[i]['p1'] == 3) {
             alert('player 1 wins');
             reset_game_board();
             return
         }
-        else if(game_board[i]['p2']==3){
+        else if (game_board[i]['p2'] == 3) {
             alert('Player 2 wins!');
             reset_game_board();
             return
         }
-        else{
-            return
-        }
-    }
-
-
-for(var i=0;i<=win_condition_array.length;i++){
-    var x_counter=null;
-    var o_counter=null;
-    for(var j=0; j<win_condition_array[i].length;i++){
-        var condition = win_condition_array[i][j];
-        if (game_board[condition] == 'x'){
-            x_counter+=1;
-            if (x_counter==3){
-                console.log('x wins')
-            }
-        }
-        else if (j=='o'){
-            o_counter+=1;
-            if (o_counter==3){
-                console.log('o wins')
-            }
-        }
-        else {
-
-        }
     }
 }
-}
+
+
+
 
 //Reset function
 function reset_game_board(){
@@ -119,8 +117,8 @@ function reset_game_board(){
         row1:{p1:0,p2:0},
         row2:{p1:0,p2:0},
         row3:{p1:0,p2:0},
-        diagon1:{p1:0,p2:0},
-        diagon2:{p1:0,p2:0},
+        diagonal1:{p1:0,p2:0},
+        diagonal2:{p1:0,p2:0},
     };
 
 }
