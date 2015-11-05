@@ -2,12 +2,38 @@
 <html>
 <head>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <style>
+        .title{
+            font-size: 2em;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .about {
             background-color: rgba(187,246,244,0.5);
+            height: 90%;
+            width: 60%;
+            position: relative;
+            left: 10%;
+            top: 50%;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        .header {
-            font-size:
+        h2.header {
+            font-size: 1.5em;
+            text-align: center;
+
+        }
+        p {
+            font-size: 1.3em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div.container-fluid {
+            position: relative;
+        }
+        ul {
+            list-style-image: url('images/fishicon.png');
+            list-style-position: inside;
         }
     </style>
 </head>
@@ -15,24 +41,40 @@
 <div class="container-fluid">
     <div class="row">
         <div class="navbar" id="navbar">
-            <h1>About Tic-Tac-Undertow</h1>
-
+            <h1 class="title">About Tic-Tac-Undertow</h1>
         </div>
     </div>
     <div class="about">
-        <p class="header">
+        <h2 class="header">
             How to play!
-        </p>
-        <p>
-            Pick an adversary to play against and prepare
-        </p>
-        <p class="header">
+        </h2>
+        <ul>
+            <li>
+                Pick an adversary to play against and prepare to populate the ocean with your own fish species.
+            </li>
+            <li>
+                Choose your fish species!
+            </li>
+            <li>
+                Rock, paper, scissors to see who will go first.
+            </li>
+            <li>
+                Click in a square of your choice to enter your fish.
+            </li>
+            <li>
+                Now, it's the next player's turn. Keep taking turns until somebody wins.
+            </li>
+        </ul>
+        <h2 class="header">
             How to win!
-        </p>
-        <p>
-
-        </p>
+        </h2>
+        <ul>
+            <li>
+                Overtake an entire row (down, across or diagonal) to win the game.
+            </li>
+        </ul>
     </div>
+    <div></div>
 </div>
 </body>
 </html>
