@@ -13,9 +13,11 @@ var game_board={
       column1:{p1:0,p2:0},
       column2:{p1:0,p2:0},
       column3:{p1:0,p2:0},
+      column4:{p1:0,p2:0},
       row1:{p1:0,p2:0},
       row2:{p1:0,p2:0},
       row3:{p1:0,p2:0},
+      row4:{p1:0,p2:0},
       diagonal1:{p1:0,p2:0},
       diagonal2:{p1:0,p2:0},
     };
@@ -88,6 +90,7 @@ var win_condition_array = [
 //    }
 //}
 
+//Win Check on 3 x 3 Board
 function check_for_win() {
     for (i in game_board) {
         if (game_board[i]['p1'] == 3) {
@@ -103,8 +106,21 @@ function check_for_win() {
     }
 }
 
-
-
+//Win Check on 4 x 4 Board
+function check_for_win_lg() {
+    for (i in game_board) {
+        if (game_board[i]['p1'] == 4) {
+            alert('player 1 wins');
+            reset_game_board();
+            return
+        }
+        else if (game_board[i]['p2'] == 4) {
+            alert('Player 2 wins!');
+            reset_game_board();
+            return
+        }
+    }
+}
 
 //Reset function
 function reset_game_board(){
@@ -114,9 +130,11 @@ function reset_game_board(){
         column1:{p1:0,p2:0},
         column2:{p1:0,p2:0},
         column3:{p1:0,p2:0},
+        column4:{p1:0,p2:0},
         row1:{p1:0,p2:0},
         row2:{p1:0,p2:0},
         row3:{p1:0,p2:0},
+        row4:{p1:0,p2:0},
         diagonal1:{p1:0,p2:0},
         diagonal2:{p1:0,p2:0},
     };
@@ -125,14 +143,19 @@ function reset_game_board(){
 
 //Document Ready - should include basic click handler
 $(document).ready(function () {
-    $('.gameboard_wrapper').on('click','.game_board',function(){
+    $('.gameboard_wrapper, .lg_gameboard_wrapper').on('click','.game_board',function(){
         var current_square=this;
         if($(this).hasClass("clicked")){
             return}
         else{
             insert_player_piece(current_square);
             update_board2(current_square);
-            check_for_win();
+            if  ($('.gameboard_wrapper').hasClass('hide')) {
+                check_for_win_lg();
+            }
+            else {
+                check_for_win();
+            }
             console.log(game_board);
             console.log(player1_turn);
             if(player1_turn){
