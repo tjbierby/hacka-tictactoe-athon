@@ -18,11 +18,18 @@ body {
     height: 20vh;
     font-size: 3em;
     text-align: center;
+    padding: 0;
+    margin: auto;
+}
+
+button {
+    border: none;
+    background-color: rgba(45,164,194,0.6);
 }
 
 img {
-    padding: 0;
-    margin: 0;
+    padding: 1%;
+    margin: auto;
     height: auto;
     width: 90%;
 }
