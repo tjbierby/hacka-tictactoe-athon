@@ -94,12 +94,12 @@ var win_condition_array = [
 function check_for_win() {
     for (i in game_board) {
         if (game_board[i]['p1'] == 3) {
-            alert('player 1 wins');
+            alert('beta fish wins');
             reset_game_board();
             return
         }
         else if (game_board[i]['p2'] == 3) {
-            alert('Player 2 wins!');
+            alert('puffer fish wins!');
             reset_game_board();
             return
         }
