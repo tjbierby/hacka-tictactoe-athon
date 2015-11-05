@@ -92,12 +92,17 @@ for(var i=0;i<=win_condition_array.length;i++){
 function check_for_win() {
     for (i in game_board) {
         if (game_board[i]['p1'] == 3) {
-            alert('beta fish wins');
+            //Activate the modal and fill it with proper contents
+            $('#pix-modal img').attr('src', 'images/betafish.png');
+            $('.modal-footer p').text('Beta Fish Wins!');
+            $('#pix-modal').modal();
             reset_game_board();
             return
         }
         else if (game_board[i]['p2'] == 3) {
-            alert('puffer fish wins!');
+            $('#pix-modal img').attr('src', 'images/puffer.png');
+            $('.modal-footer p').text('Puffer Fish Wins!'); 
+            $('#pix-modal').modal();
             reset_game_board();
             return
         }
@@ -108,12 +113,17 @@ function check_for_win() {
 function check_for_win_lg() {
     for (i in game_board) {
         if (game_board[i]['p1'] == 4) {
-            alert('player 1 wins');
+            //Activate the modal and fill it with proper contents
+            $('#pix-modal img').attr('src', 'images/betafish.png');
+            $('.modal-footer p').text('Beta Fish Wins!');
+            $('#pix-modal').modal(); 
             reset_game_board();
             return
         }
         else if (game_board[i]['p2'] == 4) {
-            alert('Player 2 wins!');
+            $('#pix-modal img').attr('src', 'images/puffer.png');
+            $('.modal-footer p').text('Puffer Fish Wins!'); 
+            $('#pix-modal').modal();  
             reset_game_board();
             return
         }

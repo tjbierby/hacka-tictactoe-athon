@@ -47,6 +47,13 @@ body {
     background-color: rgba(187, 246, 244, 0.5);
 }
 
+.modal-body, .modal-footer {
+    background-color: rgba(33, 33, 33, 1);
+    text-align: center;
+    border-top: none;
+    color: #337ab7;
+}
+
 button {
     height: 15%;
     width: 15%;
