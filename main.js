@@ -172,10 +172,12 @@ $(document).ready(function () {
     $("#easy").click(function(){
         $(".gameboard_wrapper").removeClass('hide');
         $(".lg_gameboard_wrapper").addClass('hide');
+        reset_game_board();
     });
     $("#difficult").click(function() {
         $(".lg_gameboard_wrapper").removeClass('hide');
         $(".gameboard_wrapper").addClass('hide');
+        reset_game_board();
     });
 
 });
