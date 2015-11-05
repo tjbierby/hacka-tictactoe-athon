@@ -37,3 +37,18 @@ img {
 .hide {
     display: none;
 }
+.topLeft,.bottomLeft,.middleLeft{
+    border-left: none;
+}
+.topRight,.bottomRight,.middleRight{
+    border-right: none;
+}
+.topRight,.topLeft,.topMiddle{
+    border-top: none;
+}
+.bottomLeft,.bottomRight,.bottomMiddle{
+    border-bottom:none ;
+}
+
+
+
