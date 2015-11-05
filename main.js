@@ -57,7 +57,7 @@ function update_board(square){
 
 }
 //Win condition function
-var game_board_array = [];
+/*var game_board_array = [];
 var win_condition_array = [
     [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
 ];
@@ -86,7 +86,7 @@ for(var i=0;i<=win_condition_array.length;i++){
         }
     }
 }
-}
+}*/
 
 //Reset function
 function reset_game_board(){
@@ -105,7 +105,6 @@ $(document).ready(function () {
             update_board(current_square);
             console.log(game_board);
         }
-
 
     });
 
