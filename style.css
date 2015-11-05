@@ -27,6 +27,16 @@ body {
     font-size: 3.5em;
 }
 
+.nav-pills a{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.reset_button{
+    width: 5vw;
+    font-size: 1em;
+}
+
 .game_board {
     border: 1px solid rgba(255, 255, 255, 0.40);
     height: 20vh;
