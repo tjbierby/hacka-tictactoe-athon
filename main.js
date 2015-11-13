@@ -55,38 +55,6 @@ function update_board2(square){
     }
 }
 
-//Hard-coded Win Condition
-/*var game_board_array = [];
-var win_condition_array = [
-    [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
-];*/
-
-/*var game_board_array = [];
-var win_condition_array = [
-    [s0,s1,s2],[s3,s4,s5],[s6,s7,s8],[s0,s3,s6],[s1,s4,s7],[s2,s5,s8],[s0,s4,s8],[s2,s4,s6]
-];
-for(var i=0;i<=win_condition_array.length;i++){
-    var x_counter=null;
-    var o_counter=null;
-    for(var j=0; j<win_condition_array[i].length;i++){
-        var condition = win_condition_array[i][j];
-        if (game_board[condition] == 'x'){
-            x_counter+=1;
-            if (x_counter==3){
-                console.log('x wins')
-            }
-        }
-        else if (j=='o'){
-            o_counter+=1;
-            if (o_counter==3){
-                console.log('o wins')
-            }
-        }
-        else {
-
-        }
-    }
-}*/
 
 //Win Check on 3 x 3 Board
 function check_for_win() {
@@ -154,7 +122,8 @@ $(document).ready(function () {
     $('.gameboard_wrapper, .lg_gameboard_wrapper').on('click','.game_board',function(){
         var current_square=this;
         if($(this).hasClass("clicked")){
-            return}
+            return;
+        }
         else{
             insert_player_piece(current_square);
             update_board2(current_square);
